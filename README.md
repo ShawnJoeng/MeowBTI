@@ -10,30 +10,60 @@ The interface supports both Chinese and English. Use the language switch in the 
 
 ## 16 Cat Personas
 
-<table>
+<table width="100%">
+<colgroup>
+<col width="25%">
+<col width="25%">
+<col width="25%">
+<col width="25%">
+</colgroup>
 <tr>
-<td align="center" valign="top"><img src="./assets/cats/intj.png" width="180" height="180"><br><strong>INTJ · Mastermind Meow</strong><br><sub>Strategic · Goal-driven · Efficient</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/intp.png" width="180" height="180"><br><strong>INTP · Lab Meow</strong><br><sub>Experimental · Focused · Brainy</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/entj.png" width="180" height="180"><br><strong>ENTJ · Captain Meow</strong><br><sub>Commanding · Goal-driven · In control</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/entp.png" width="180" height="180"><br><strong>ENTP · Breakthrough Meow</strong><br><sub>Problem-solving · Clever · Boundary-testing</sub></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/intj.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/intp.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/entj.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/entp.png" width="180" height="180"></td>
 </tr>
 <tr>
-<td align="center" valign="top"><img src="./assets/cats/infj.png" width="180" height="180"><br><strong>INFJ · Insight Meow</strong><br><sub>Perceptive · Reserved · Deeply connected</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/infp.png" width="180" height="180"><br><strong>INFP · Poet Meow</strong><br><sub>Slow to warm up · Empathetic · Spontaneous</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/enfj.png" width="180" height="180"><br><strong>ENFJ · Harmony Meow</strong><br><sub>Attentive · Empathetic · Organizing</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/enfp.png" width="180" height="180"><br><strong>ENFP · Adventure Meow</strong><br><sub>Curious · Energetic · Imaginative</sub></td>
+<td width="25%" align="center" valign="top"><strong>INTJ · Mastermind Meow</strong><br><sub>Strategic · Goal-driven · Efficient</sub></td>
+<td width="25%" align="center" valign="top"><strong>INTP · Lab Meow</strong><br><sub>Experimental · Focused · Brainy</sub></td>
+<td width="25%" align="center" valign="top"><strong>ENTJ · Captain Meow</strong><br><sub>Commanding · Goal-driven · In control</sub></td>
+<td width="25%" align="center" valign="top"><strong>ENTP · Breakthrough Meow</strong><br><sub>Problem-solving · Clever · Boundary-testing</sub></td>
 </tr>
 <tr>
-<td align="center" valign="top"><img src="./assets/cats/istj.png" width="180" height="180"><br><strong>ISTJ · Orderly Meow</strong><br><sub>Structured · Punctual · Predictable</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/isfj.png" width="180" height="180"><br><strong>ISFJ · Care Meow</strong><br><sub>Supportive · Reliable · Routine-loving</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/estj.png" width="180" height="180"><br><strong>ESTJ · Manager Meow</strong><br><sub>Organized · Clear · Gets things done</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/esfj.png" width="180" height="180"><br><strong>ESFJ · Sweetheart Meow</strong><br><sub>Warm · Responsive · Ritual-loving</sub></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/infj.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/infp.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/enfj.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/enfp.png" width="180" height="180"></td>
 </tr>
 <tr>
-<td align="center" valign="top"><img src="./assets/cats/istp.png" width="180" height="180"><br><strong>ISTP · Maker Meow</strong><br><sub>Hands-on · Independent · Adaptable</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/isfp.png" width="180" height="180"><br><strong>ISFP · Chill Meow</strong><br><sub>Sensory · Easygoing · Aesthetic</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/estp.png" width="180" height="180"><br><strong>ESTP · Action Meow</strong><br><sub>Active · Daring · In the moment</sub></td>
-<td align="center" valign="top"><img src="./assets/cats/esfp.png" width="180" height="180"><br><strong>ESFP · Vibe Meow</strong><br><sub>Expressive · Playful · Instant feedback</sub></td>
+<td width="25%" align="center" valign="top"><strong>INFJ · Insight Meow</strong><br><sub>Perceptive · Reserved · Deeply connected</sub></td>
+<td width="25%" align="center" valign="top"><strong>INFP · Poet Meow</strong><br><sub>Slow to warm up · Empathetic · Spontaneous</sub></td>
+<td width="25%" align="center" valign="top"><strong>ENFJ · Harmony Meow</strong><br><sub>Attentive · Empathetic · Organizing</sub></td>
+<td width="25%" align="center" valign="top"><strong>ENFP · Adventure Meow</strong><br><sub>Curious · Energetic · Imaginative</sub></td>
+</tr>
+<tr>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/istj.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/isfj.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/estj.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/esfj.png" width="180" height="180"></td>
+</tr>
+<tr>
+<td width="25%" align="center" valign="top"><strong>ISTJ · Orderly Meow</strong><br><sub>Structured · Punctual · Predictable</sub></td>
+<td width="25%" align="center" valign="top"><strong>ISFJ · Care Meow</strong><br><sub>Supportive · Reliable · Routine-loving</sub></td>
+<td width="25%" align="center" valign="top"><strong>ESTJ · Manager Meow</strong><br><sub>Organized · Clear · Gets things done</sub></td>
+<td width="25%" align="center" valign="top"><strong>ESFJ · Sweetheart Meow</strong><br><sub>Warm · Responsive · Ritual-loving</sub></td>
+</tr>
+<tr>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/istp.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/isfp.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/estp.png" width="180" height="180"></td>
+<td width="25%" align="center" valign="top"><img src="./assets/cats/esfp.png" width="180" height="180"></td>
+</tr>
+<tr>
+<td width="25%" align="center" valign="top"><strong>ISTP · Maker Meow</strong><br><sub>Hands-on · Independent · Adaptable</sub></td>
+<td width="25%" align="center" valign="top"><strong>ISFP · Chill Meow</strong><br><sub>Sensory · Easygoing · Aesthetic</sub></td>
+<td width="25%" align="center" valign="top"><strong>ESTP · Action Meow</strong><br><sub>Active · Daring · In the moment</sub></td>
+<td width="25%" align="center" valign="top"><strong>ESFP · Vibe Meow</strong><br><sub>Expressive · Playful · Instant feedback</sub></td>
 </tr>
 </table>
 
