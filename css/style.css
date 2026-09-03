@@ -158,6 +158,15 @@ main { position: relative; z-index: 1; width: 100%; max-width: 860px; margin: 0 
   padding: clamp(12px, 3vw, 42px);
   background: #F7F1E6;
 }
+.lang-toggle {
+  position: absolute; top: 16px; right: 16px; z-index: 4;
+  min-width: 48px; height: 40px; padding: 7px 12px; cursor: pointer;
+  border: 1px solid rgba(87, 52, 35, .16); border-radius: 999px;
+  background: rgba(255, 254, 240, .9); color: var(--ink); font: inherit; font-size: 13px; font-weight: 800;
+  box-shadow: 0 4px 12px rgba(87, 52, 35, .12), inset 0 1px 0 rgba(255, 255, 255, .9);
+  transition: transform .16s ease, background .16s ease, border-color .16s ease;
+}
+.lang-toggle:hover { transform: translateY(-1px); background: #fff; border-color: rgba(87, 52, 35, .28); }
 .cover-home::after {
   content: ""; position: absolute; inset: 0; z-index: 1;
   background: rgba(255, 250, 241, .16); pointer-events: none;
@@ -436,6 +445,7 @@ main { position: relative; z-index: 1; width: 100%; max-width: 860px; margin: 0 
 }
 
 @media (max-width: 640px) {
+  .lang-toggle { top: 12px; right: 12px; }
   .actions { gap: 7px; }
   .actions .btn { min-height: 44px; padding: 9px 5px; font-size: 12.5px; }
   .section-head { gap: 10px; }

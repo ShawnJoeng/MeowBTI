@@ -66,7 +66,7 @@ window.MEOW = window.MEOW || {};
       var voteMargin = answered ? Math.abs(posVotes - negVotes) / answered : 0;
       var weightedMargin = sum ? Math.abs(p - n) / sum : 0;
       var stability = Math.round(100 * (coverage * .35 + voteMargin * .35 + weightedMargin * .30));
-      var stabilityLabel = stability >= 78 && coverage >= .75 ? '跨场景稳定' : (stability >= 58 && coverage >= .5 ? '倾向较稳' : (stability >= 38 ? '倾向初显' : '接近中线'));
+      var stabilityLabel = stability >= 78 && coverage >= .75 ? MEOW.t('axisStable') : (stability >= 58 && coverage >= .5 ? MEOW.t('axisSteady') : (stability >= 38 ? MEOW.t('axisEmerging') : MEOW.t('axisMiddle')));
       axisInfo.push({
         key: ax.key, title: ax.title, letter: letter,
         posPct: pct, negPct: 100 - pct,
@@ -88,7 +88,7 @@ window.MEOW = window.MEOW || {};
 
     var overallStability = Math.round(axisInfo.reduce(function (total, a) { return total + a.stability; }, 0) / axisInfo.length);
     var overallCoverage = axisInfo.reduce(function (total, a) { return total + a.coverage; }, 0) / axisInfo.length;
-    var overallStabilityLabel = overallStability >= 78 && overallCoverage >= .75 ? '稳定' : (overallStability >= 58 && overallCoverage >= .5 ? '较稳' : (overallStability >= 38 ? '轮廓初显' : '仍在观察')); 
+    var overallStabilityLabel = overallStability >= 78 && overallCoverage >= .75 ? MEOW.t('overallStable') : (overallStability >= 58 && overallCoverage >= .5 ? MEOW.t('overallSteady') : (overallStability >= 38 ? MEOW.t('overallEmerging') : MEOW.t('overallWatching'))); 
 
     /* --- 五项属性 --- */
     var traits = MEOW.TRAITS.map(function (t) {
@@ -138,7 +138,7 @@ window.MEOW = window.MEOW || {};
     return {
       code: code,
       type: type,
-      name: (meta.name || '').trim() || '它',
+      name: (meta.name || '').trim() || MEOW.t('catPronoun'),
       fur: meta.fur || MEOW.FURS[0].key,
       photo: meta.photo || '',
       axisInfo: axisInfo,

@@ -19,14 +19,16 @@ window.MEOW = window.MEOW || {};
   }
 
   /* 一行属性条：10 个圆角小方块 */
-  function traitRow(t, y, color) {
-    var x0 = 196, bw = 33, gap = 6, filled = Math.round(t.value / 10);
+  function traitRow(t, y, color, lang) {
+    var isEn = lang === 'en';
+    var x0 = isEn ? 238 : 196, bw = isEn ? 29 : 33, gap = isEn ? 5 : 6, filled = Math.round(t.value / 10);
+    var labelSize = isEn ? 20 : 27;
     var blocks = '';
     for (var i = 0; i < 10; i++) {
       blocks += `<rect x="${x0 + i * (bw + gap)}" y="${y - 13}" width="${bw}" height="26" rx="9"
         fill="${i < filled ? color : '#000'}" fill-opacity="${i < filled ? 1 : 0.07}"/>`;
     }
-    return `<text x="72" y="${y + 9}" font-size="27" fill="#4A4353" font-family="${FONT}">${t.emoji} ${t.label}</text>
+    return `<text x="72" y="${y + 8}" font-size="${labelSize}" fill="#4A4353" font-family="${FONT}">${t.emoji} ${t.label}</text>
       ${blocks}
       <text x="648" y="${y + 9}" font-size="25" font-weight="600" fill="#4A4353" text-anchor="end"
         font-family="${FONT}">${t.value}%</text>`;
@@ -44,6 +46,7 @@ window.MEOW = window.MEOW || {};
   /* ---------- 主函数：生成整张卡片的 SVG ---------- */
   MEOW.cardSVG = function (r, opts) {
     opts = opts || {};
+    var lang = opts.lang || MEOW.lang || 'zh';
     var c1 = r.type.theme[0], c2 = r.type.theme[1];
     var avatar = r.photo
       ? `<image href="${r.photo}" xlink:href="${r.photo}" x="262" y="152" width="196" height="196"
@@ -51,7 +54,7 @@ window.MEOW = window.MEOW || {};
       : `<image href="${opts.catAsset || MEOW.catAsset(r.code)}" xlink:href="${opts.catAsset || MEOW.catAsset(r.code)}"
            x="262" y="152" width="196" height="196" preserveAspectRatio="xMidYMid slice" clip-path="url(#avaClip)"/>`;
 
-    var rows = r.traits.map(function (t, i) { return traitRow(t, 600 + i * 58, c1); }).join('');
+    var rows = r.traits.map(function (t, i) { return traitRow(t, 600 + i * 58, c1, lang); }).join('');
     var skills = r.skills.map(function (s, i) {
       return `<circle cx="80" cy="${950 + i * 44}" r="4.5" fill="${c1}"/>
         <text x="98" y="${958 + i * 44}" font-size="23" fill="#5A5266" font-family="${FONT}">${esc(s)}</text>`;
@@ -82,14 +85,14 @@ window.MEOW = window.MEOW || {};
       <text x="360" y="430" font-size="74" font-weight="800" letter-spacing="10" text-anchor="middle"
         fill="${c1}" font-family="${FONT}">${r.code}</text>
       <text x="360" y="478" font-size="31" font-weight="600" text-anchor="middle" fill="#4A4353"
-        font-family="${FONT}">${r.type.emoji}「${esc(r.type.name)}」</text>
+        font-family="${FONT}">${r.type.emoji} ${lang === 'en' ? esc(r.type.name) : '「' + esc(r.type.name) + '」'}</text>
       <text x="360" y="518" font-size="22" text-anchor="middle" fill="#8A8194" font-family="${FONT}"
-        >稀有度 ${stars(r.stars)} · 全球约 ${r.rarity}% 的猫</text>
+        >${MEOW.t('rarityCard', { stars: stars(r.stars), rarity: r.rarity })}</text>
       <path d="M72 558 H648" stroke="#000" stroke-opacity=".08" stroke-width="2"/>
       ${rows}
       <path d="M72 864 H648" stroke="#000" stroke-opacity=".08" stroke-width="2"/>
       <text x="72" y="908" font-size="24" font-weight="700" letter-spacing="2" fill="#8A8194"
-        font-family="${FONT}">特殊技能 / SPECIAL SKILLS</text>
+        font-family="${FONT}">${MEOW.t('specialSkills')}</text>
       ${skills}
     </svg>`;
   };
@@ -134,10 +137,11 @@ window.MEOW = window.MEOW || {};
     });
   }
 
-  MEOW.downloadCard = function (r, scale) {
+  MEOW.downloadCard = function (r, scale, lang) {
     scale = scale || 2;
+    lang = lang || MEOW.lang || 'zh';
     return inlineCatAsset(r.code).then(function (catAsset) {
-      var markup = MEOW.cardSVG(r, { width: W, height: H, catAsset: catAsset });
+      var markup = MEOW.cardSVG(r, { width: W, height: H, catAsset: catAsset, lang: lang });
       return new Promise(function (resolve) {
         var url = URL.createObjectURL(new Blob([markup], { type: 'image/svg+xml;charset=utf-8' }));
         var img = new Image();
