@@ -114,18 +114,23 @@ window.MEOW = window.MEOW || {};
 
   /* 先尝试导出 PNG，浏览器不支持时自动降级为 SVG，返回实际格式 */
   function inlineCatAsset(code) {
+    var embedded = MEOW.CAT_DATA && MEOW.CAT_DATA[String(code || '').toLowerCase()];
+    if (embedded) return Promise.resolve(embedded);
+
     return new Promise(function (resolve) {
       var img = new Image();
+      var asset = MEOW.catAsset(code);
+      try { asset = new URL(asset, document.baseURI).href; } catch (e) {}
       img.onload = function () {
         try {
           var cv = document.createElement('canvas');
           cv.width = img.naturalWidth; cv.height = img.naturalHeight;
           cv.getContext('2d').drawImage(img, 0, 0);
           resolve(cv.toDataURL('image/png'));
-        } catch (e) { resolve(MEOW.catAsset(code)); }
+        } catch (e) { resolve(asset); }
       };
-      img.onerror = function () { resolve(MEOW.catAsset(code)); };
-      img.src = MEOW.catAsset(code);
+      img.onerror = function () { resolve(asset); };
+      img.src = asset;
     });
   }
 
