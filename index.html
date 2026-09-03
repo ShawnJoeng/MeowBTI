@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFF6F0">
+<meta name="description" content="MeowBTI · 猫格测试：24 道行为观察题，结合四个维度解析你家猫的性格，生成一张猫格身份证。">
+<title>MeowBTI · 猫格测试｜给你家猫一张性格身份证</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E🐱%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css?v=20260903-31">
+</head>
+<body>
+<div class="deco" aria-hidden="true"><span>🐾</span><span>🐟</span><span>🐾</span><span>🧶</span><span>🐾</span></div>
+
+<main>
+  <!-- ============ 首页 ============ -->
+  <section class="screen is-active" id="screen-home">
+    <div class="cover-home">
+      <div class="cover-mosaic" id="heroMosaic" aria-hidden="true"></div>
+      <div class="cover-card">
+        <p class="cover-eyebrow">CAT PERSONALITY PROFILE</p>
+        <h1 class="cover-title">MeowBTI<span>猫格性格测试</span></h1>
+        <p class="cover-subtitle">用猫猫方式，读懂它的性格</p>
+        <div class="cover-feature-cats" id="coverFeatureCats"></div>
+        <p class="cover-meta"><span>24 道题</span><i></i><span>约 5 分钟</span><i></i><span>解锁专属猫格报告</span></p>
+        <button class="cover-cta" id="startQuiz">开始测试</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 答题 ============ -->
+  <section class="screen" id="screen-quiz">
+    <div class="quiz-head">
+      <div class="progress"><i id="progressBar"></i></div>
+      <div class="quiz-meta">
+        <span id="quizCount">第 1 / 24 题</span>
+      </div>
+    </div>
+    <div class="panel qcard" id="qcard">
+      <p class="q-hint" id="qHint"></p>
+      <h2 class="q-text" id="qText"></h2>
+      <div class="opts" id="opts"></div>
+    </div>
+    <div class="quiz-foot">
+      <button class="btn btn-ghost" id="prevQ">← 上一题</button>
+      <span class="hint">按最近两周最常见的行为选择；没见过可以选择跳过</span>
+    </div>
+  </section>
+
+  <!-- ============ 结果 ============ -->
+  <section class="screen" id="screen-result">
+    <div class="result-card-wrap"><div id="cardHost" class="card-host"></div></div>
+    <div class="actions">
+      <button class="btn btn-ghost" id="retake">再测一只</button>
+      <button class="btn btn-primary" id="saveCard">保存卡片</button>
+      <button class="btn btn-ghost" data-go="gallery">查看所有图鉴</button>
+    </div>
+    <p class="hint save-hint">长按卡片也可保存图片</p>
+    <div class="report" id="report"></div>
+  </section>
+
+  <!-- ============ 图鉴 ============ -->
+  <section class="screen" id="screen-gallery">
+    <div class="section-head">
+      <button class="btn btn-ghost section-back" id="galleryBack">← 返回</button>
+      <h2 class="sec-title">猫格图鉴</h2>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>娱乐向猫咪性格测试，不构成医疗或行为学诊断</p>
+</footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-mask" data-close="1"></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="猫格详情">
+    <button class="chip-x modal-close" data-close="1" aria-label="关闭">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js?v=20260902-7"></script>
+<script src="js/cat.js?v=20260903-30"></script>
+<script src="js/score.js?v=20260903-33"></script>
+<script src="js/card.js?v=20260902-9"></script>
+<script src="js/app.js?v=20260903-32"></script>
+</body>
+</html>
